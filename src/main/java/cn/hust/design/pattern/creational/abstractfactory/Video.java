@@ -1,4 +1,4 @@
-package cn.hust.design.pattern.creation.factorymethod;
+package cn.hust.design.pattern.creational.abstractfactory;
 
 /**
  * @program: design_pattern
