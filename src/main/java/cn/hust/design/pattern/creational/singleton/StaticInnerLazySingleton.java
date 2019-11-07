@@ -24,7 +24,9 @@ public class StaticInnerLazySingleton {
 
     //一定要写private，否则构造器可以被外部使用
     private StaticInnerLazySingleton(){
-
+        if(InnerClass.staticInnerLazySingleton != null){
+            throw  new RuntimeException("单例模式");
+        }
     }
 
     private StaticInnerLazySingleton getInstance(){
