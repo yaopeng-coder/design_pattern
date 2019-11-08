@@ -1,5 +1,6 @@
 package cn.hust.design.principle.demeter;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class TeamLeader {
 
     public void checkCourseNumbers(){
-        List<Course> courseList = new ArrayList<>();
+        List<Course> courseList = new ArrayList<Course>();
         for(int i = 0; i< 10;i++){
             courseList.add(new Course());
         }

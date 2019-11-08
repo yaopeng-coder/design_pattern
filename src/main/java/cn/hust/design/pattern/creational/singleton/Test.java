@@ -1,8 +1,6 @@
 package cn.hust.design.pattern.creational.singleton;
 
 import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -44,7 +42,7 @@ public class Test {
 
 
         //反射破坏单例模式，懒汉式syn无用
-        Class<?> aClass = Class.forName("cn.hust.design.pattern.creational.singleton.LazySingleton");
+  /*      Class<?> aClass = Class.forName("cn.hust.design.pattern.creational.singleton.LazySingleton");
         Constructor<?> constructor = aClass.getDeclaredConstructor();
         Constructor<LazySingleton> constructor1 = LazySingleton.class.getDeclaredConstructor();
         constructor.setAccessible(true);
@@ -57,7 +55,27 @@ public class Test {
 
         System.out.println(lazySingleton);
         System.out.println(lazySingleton1);
-        System.out.println(lazySingleton == lazySingleton1);
+        System.out.println(lazySingleton == lazySingleton1);*/
+
+
+
+        //序列化演示枚举单例不会被破坏
+        EnumSingleton intance = EnumSingleton.getIntance();
+        intance.test();
+//        intance.setData(new Object());
+//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("single.file"));
+//        objectOutputStream.writeObject(intance);
+//        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("single.file"));
+//        EnumSingleton singleton = (EnumSingleton) objectInputStream.readObject();
+//        System.out.println(intance.getData());
+//        System.out.println(singleton.getData());
+//        System.out.println(intance.getData() == singleton.getData());
+
+        //无法进行反射攻击，会抛异常
+//        Class<EnumSingleton> singletonClass = EnumSingleton.class;
+//        Constructor<EnumSingleton> declaredConstructor = singletonClass.getDeclaredConstructor(String.class,int.class);
+//        declaredConstructor.newInstance("xy",7);
+
 
     }
 }

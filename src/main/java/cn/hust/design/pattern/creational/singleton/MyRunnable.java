@@ -7,11 +7,16 @@ package cn.hust.design.pattern.creational.singleton;
  **/
 public class MyRunnable implements Runnable {
 
-    @Override
+
     public void run() {
       //  LazySingleton lazySingleton = LazySingleton.getInstance();
 //        LazyDoubleCheckSingleton lazyDoubleCheckSingleton = LazyDoubleCheckSingleton.getInstence();
-        HungrySingleton hungrySingleton = HungrySingleton.getInstance();
-        System.out.println(Thread.currentThread().getName()+"    "+hungrySingleton);
+//        HungrySingleton hungrySingleton = HungrySingleton.getInstance();
+//        System.out.println(Thread.currentThread().getName()+"    "+hungrySingleton);
+//        ContainerSingleton.putSingleton("object",new Object());
+  //      Object object = ContainerSingleton.getSingleton("object");
+        ThreadLocalSingleton singleton = ThreadLocalSingleton.getSingleton();
+        System.out.println(singleton);
+
     }
 }
